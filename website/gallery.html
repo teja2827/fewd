@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - ShopEase</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <style>
+    .gallery-item {
+      margin-bottom: 30px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .gallery-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+    
+    .filter-btn {
+      margin: 0 5px 10px;
+    }
+    
+    .featured-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ffc107;
+      color: #000;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+    
+    .category-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (placeholder - will use the shared component) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Navbar content from navbar-header-footer.html would go here -->
+  </nav>
+  
+  <!-- Header -->
+  <header class="bg-primary text-white py-4 mb-4">
+    <div class="container">
+      <h1 class="page-title">Gallery</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">Gallery</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Gallery Section -->
+  <section class="py-5">
+    <div class="container">
+      <!-- Hero Banner -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card bg-dark text-white">
+            <img src="/api/placeholder/1200/400" class="card-img" alt="Gallery banner">
+            <div class="card-img-overlay d-flex flex-column justify-content-center text-center" style="background-color: rgba(0,0,0,0.4);">
+              <h2 class="card-title display-4 fw-bold">Product Showcase</h2>
+              <p class="card-text lead">Explore our extensive collection of high-quality products</p>
+              <p class="card-text">Browse by category or view our featured collections</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h3 class="mb-3">Browse by Category</h3>
+          <div class="filter-buttons">
+            <button class="btn btn-primary filter-btn active" data-filter="all">All</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="electronics">Electronics</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="clothing">Clothing</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="home">Home & Kitchen</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="beauty">Beauty</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="featured">Featured</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="new-arrivals">New Arrivals</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gallery Grid -->
+      <div class="row" id="gallery">
+        <!-- Electronics Category -->
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="electronics">
+          <div class="position-relative">
+            <span class="category-badge">Electronics</span>
+            <span class="featured-badge">Featured</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Premium Wireless Headphones">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Wireless Headphones">
+              <div class="gallery-caption">
+                <h5>Premium Wireless Headphones</h5>
+                <p class="mb-0">Experience crystal clear sound with our premium noise-canceling headphones</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="electronics">
+          <div class="position-relative">
+            <span class="category-badge">Electronics</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Smart Watch">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Smart Watch">
+              <div class="gallery-caption">
+                <h5>Smart Watch</h5>
+                <p class="mb-0">Track your fitness and stay connected with our latest smart watch</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="electronics">
+          <div class="position-relative">
+            <span class="category-badge">Electronics</span>
+            <span class="featured-badge">New</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Wireless Earbuds">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Wireless Earbuds">
+              <div class="gallery-caption">
+                <h5>Wireless Earbuds</h5>
+                <p class="mb-0">Compact design with exceptional sound quality</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Clothing Category -->
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="clothing">
+          <div class="position-relative">
+            <span class="category-badge">Clothing</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Men's Casual Jacket">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Men's Casual Jacket">
+              <div class="gallery-caption">
+                <h5>Men's Casual Jacket</h5>
+                <p class="mb-0">Stylish and comfortable jacket for everyday wear</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="clothing">
+          <div class="position-relative">
+            <span class="category-badge">Clothing</span>
+            <span class="featured-badge">Featured</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Women's Summer Dress">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Women's Summer Dress">
+              <div class="gallery-caption">
+                <h5>Women's Summer Dress</h5>
+                <p class="mb-0">Light and elegant dress perfect for summer occasions</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="clothing">
+          <div class="position-relative">
+            <span class="category-badge">Clothing</span>
+            <span class="featured-badge">New</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Athletic Shoes">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Athletic Shoes">
+              <div class="gallery-caption">
+                <h5>Athletic Shoes</h5>
+                <p class="mb-0">Comfortable and durable shoes for your active lifestyle</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Home & Kitchen Category -->
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="home">
+          <div class="position-relative">
+            <span class="category-badge">Home & Kitchen</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Modern Coffee Table">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Modern Coffee Table">
+              <div class="gallery-caption">
+                <h5>Modern Coffee Table</h5>
+                <p class="mb-0">Sleek design that complements any living room</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="home">
+          <div class="position-relative">
+            <span class="category-badge">Home & Kitchen</span>
+            <span class="featured-badge">Featured</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Kitchen Mixer">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Kitchen Mixer">
+              <div class="gallery-caption">
+                <h5>Kitchen Mixer</h5>
+                <p class="mb-0">Professional grade mixer for all your baking needs</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="home">
+          <div class="position-relative">
+            <span class="category-badge">Home & Kitchen</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Bedding Set">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Bedding Set">
+              <div class="gallery-caption">
+                <h5>Luxury Bedding Set</h5>
+                <p class="mb-0">Premium cotton bedding for maximum comfort</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Beauty Category -->
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="beauty">
+          <div class="position-relative">
+            <span class="category-badge">Beauty</span>
+            <span class="featured-badge">New</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Skincare Set">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Skincare Set">
+              <div class="gallery-caption">
+                <h5>Premium Skincare Set</h5>
+                <p class="mb-0">Complete routine for radiant and healthy skin</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="beauty">
+          <div class="position-relative">
+            <span class="category-badge">Beauty</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Makeup Palette">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Makeup Palette">
+              <div class="gallery-caption">
+                <h5>Professional Makeup Palette</h5>
+                <p class="mb-0">Versatile colors for any occasion</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 gallery-item" data-category="beauty">
+          <div class="position-relative">
+            <span class="category-badge">Beauty</span>
+            <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Hair Care Products">
+              <img src="/api/placeholder/800/600" class="gallery-img" alt="Hair Care Products">
+              <div class="gallery-caption">
+                <h5>Hair Care Products</h5>
+                <p class="mb-0">Nourishing treatments for all hair types</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Pagination -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <nav aria-label="Gallery pagination">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Seasonal Collection Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Seasonal Collections</h2>
+          <p class="lead">Explore our curated collections for every season</p>
+        </div>
+      </div>
+      <!-- Seasonal Collections (continued from previous code) -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="/api/placeholder/600/400" class="img-fluid rounded-start h-100" alt="Spring Collection" style="object-fit: cover;">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title">Spring Collection</h5>
+                  <p class="card-text">Fresh styles and vibrant colors to welcome the new season.</p>
+                  <p class="card-text"><small class="text-muted">Available now</small></p>
+                  <a href="#" class="btn btn-outline-primary">Explore Collection</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <img src="/api/placeholder/600/400" class="img-fluid rounded-start h-100" alt="Summer Collection" style="object-fit: cover;">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title">Summer Collection</h5>
+                  <p class="card-text">Light and breathable items perfect for hot summer days.</p>
+                  <p class="card-text"><small class="text-muted">Coming soon</small></p>
+                  <a href="#" class="btn btn-outline-primary">Get Notified</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- User-Submitted Photos Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h2>Customer Showcases</h2>
+          <p class="lead">See how our customers are styling and using our products</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="card">
+            <img src="/api/placeholder/400/400" class="card-img-top" alt="User photo">
+            <div class="card-body text-center">
+              <h6 class="card-title">@user_style123</h6>
+              <p class="card-text small">Loving my new wireless headphones! #ShopEaseTech</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="card">
+            <img src="/api/placeholder/400/400" class="card-img-top" alt="User photo">
+            <div class="card-body text-center">
+              <h6 class="card-title">@fashion_forward</h6>
+              <p class="card-text small">Perfect outfit for my weekend getaway #ShopEaseStyle</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="card">
+            <img src="/api/placeholder/400/400" class="card-img-top" alt="User photo">
+            <div class="card-body text-center">
+              <h6 class="card-title">@home_decor_lover</h6>
+              <p class="card-text small">My living room transformation is complete! #ShopEaseHome</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="card">
+            <img src="/api/placeholder/400/400" class="card-img-top" alt="User photo">
+            <div class="card-body text-center">
+              <h6 class="card-title">@beauty_guru</h6>
+              <p class="card-text small">Getting ready with my new makeup palette #ShopEaseBeauty</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 text-center mt-3">
+          <p>Want to be featured? Share your photos on social media with #ShopEase</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadPhotoModal">
+            <i class="bi bi-upload"></i> Upload Your Photo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action Section -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 text-center text-lg-start">
+          <h2>See something you like?</h2>
+          <p class="lead mb-0">Browse our full product catalog and find exactly what you're looking for.</p>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+          <a href="products.html" class="btn btn-light btn-lg">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Upload Photo Modal -->
+  <div class="modal fade" id="uploadPhotoModal" tabindex="-1" aria-labelledby="uploadPhotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="uploadPhotoModalLabel">Share Your Photo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="photoUpload" class="form-label">Choose a photo</label>
+              <input class="form-control" type="file" id="photoUpload" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <label for="photoDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="photoDescription" rows="3" placeholder="Tell us about your experience with this product..."></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="socialHandle" class="form-label">Your Social Media Handle (optional)</label>
+              <input type="text" class="form-control" id="socialHandle" placeholder="@yourusername">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="termsCheck" required>
+              <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Upload Photo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer (placeholder - will use the shared component) -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <!-- Footer content from navbar-header-footer.html would go here -->
+  </footer>
+  
+  <!-- Login Modal (placeholder - will use the shared component) -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <!-- Modal content from navbar-header-footer.html would go here -->
+  </div>
+  
+  <!-- Bootstrap JS with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  
+  <!-- Gallery Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Gallery filtering
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterBtns.forEach(btn => {
+            btn.classList.remove('active');
+            btn.classList.replace('btn-primary', 'btn-outline-primary');
+          });
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          this.classList.replace('btn-outline-primary', 'btn-primary');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Show/hide gallery items based on filter
+          galleryItems.forEach(item => {
+            if (filter === 'all') {
+              item.style.display = 'block';
+            } else if (filter === 'featured' && item.querySelector('.featured-badge')) {
+              item.style.display = 'block';
+            } else if (filter === 'new-arrivals' && item.querySelector('.featured-badge')?.textContent === 'New') {
+              item.style.display = 'block';
+            } else if (item.getAttribute('data-category') === filter) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Initialize Lightbox
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'albumLabel': 'Image %1 of %2'
+      });
+    });
+  </script>
+</body>
+</html>

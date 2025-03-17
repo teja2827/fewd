@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+        }
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+        }
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            margin-left: -1px;
+            background-color: #e9ecef;
+        }
+        .timeline > li {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .timeline > li:before,
+        .timeline > li:after {
+            content: " ";
+            display: table;
+        }
+        .timeline > li:after {
+            clear: both;
+        }
+        .timeline > li .timeline-panel {
+            float: left;
+            position: relative;
+            width: 46%;
+            padding: 20px;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+            background: #fff;
+        }
+        .timeline > li .timeline-panel:before {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 26px;
+            right: -15px;
+            border-top: 15px solid transparent;
+            border-right: 0 solid #ccc;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #ccc;
+        }
+        .timeline > li .timeline-panel:after {
+            content: " ";
+            display: inline-block;
+            position: absolute;
+            top: 27px;
+            right: -14px;
+            border-top: 14px solid transparent;
+            border-right: 0 solid #fff;
+            border-bottom: 14px solid transparent;
+            border-left: 14px solid #fff;
+        }
+        .timeline > li .timeline-image {
+            position: absolute;
+            z-index: 100;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            text-align: center;
+            color: white;
+            border: 7px solid #e9ecef;
+            border-radius: 100%;
+            background-color: #0d6efd;
+        }
+        .timeline > li .timeline-image h4 {
+            font-size: 10px;
+            line-height: 14px;
+            margin-top: 12px;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel:before {
+            right: auto;
+            left: -15px;
+            border-right-width: 15px;
+            border-left-width: 0;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel:after {
+            right: auto;
+            left: -14px;
+            border-right-width: 14px;
+            border-left-width: 0;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+        }
+        .team-member {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 100%;
+            border: 7px solid #f8f9fa;
+        }
+        .value-box {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .value-box:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ShopEase</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-user me-1"></i> Login
+                    </a>
+                    <a href="#" class="btn btn-light position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">About ShopEase</h1>
+            <p class="lead">Learn more about our journey, mission, and the team behind our success</p>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2>Our Story</h2>
+                    <p class="lead">Started in 2015, ShopEase has grown from a small startup to an industry leader.</p>
+                    <p>Founded by a group of tech enthusiasts with a passion for e-commerce, ShopEase was born out of a simple vision: to make online shopping easier, faster, and more enjoyable for everyone.</p>
+                    <p>What began as a small venture operating out of a garage has now transformed into a global brand serving millions of customers worldwide. Our journey has been marked by innovation, perseverance, and an unwavering commitment to customer satisfaction.</p>
+                    <p>Today, ShopEase stands as a testament to the power of customer-centric business practices and technological innovation in the e-commerce space.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400" alt="ShopEase Office" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="fas fa-bullseye fa-3x text-primary"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>To revolutionize the online shopping experience by providing high-quality products, exceptional customer service, and innovative shopping solutions that make everyday life better for our customers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="fas fa-eye fa-3x text-primary"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To become the world's most customer-centric e-commerce platform, where customers can find anything they might want to buy online at competitive prices with an unparalleled shopping experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Core Values</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card value-box h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-4 text-primary">
+                                <i class="fas fa-user-friends fa-3x"></i>
+                            </div>
+                            <h4>Customer Obsession</h4>
+                            <p>We start with the customer and work backwards. We work vigorously to earn and keep customer trust. Although we pay attention to competitors, we obsess over customers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card value-box h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-4 text-primary">
+                                <i class="fas fa-lightbulb fa-3x"></i>
+                            </div>
+                            <h4>Innovation</h4>
+                            <p>We constantly seek new ways to improve the shopping experience. We're not afraid to experiment and learn from failures to create breakthrough solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card value-box h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-4 text-primary">
+                                <i class="fas fa-handshake fa-3x"></i>
+                            </div>
+                            <h4>Integrity</h4>
+                            <p>We are honest, transparent, and accountable in every interaction. We do what we say we will do and take responsibility for our actions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Timeline -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Journey</h2>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image">
+                        <h4>2015<br/>The<br/>Beginning</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>2015</h4>
+                            <h4 class="subheading">Our Humble Beginning</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>ShopEase was founded in a small garage with just 5 team members and a vision to transform online shopping.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>2017<br/>First<br/>Milestone</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>2017</h4>
+                            <h4 class="subheading">Expansion Begins</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>We opened our first fulfillment center and expanded our team to 50 employees, serving 10,000 customers.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <h4>2019<br/>Major<br/>Growth</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>2019</h4>
+                            <h4 class="subheading">National Recognition</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>ShopEase received the "Best E-commerce Platform" award and expanded to nationwide operations with 500,000+ customers.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>2021<br/>Going<br/>Global</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>2021</h4>
+                            <h4 class="subheading">International Expansion</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>We launched operations in 10 countries and developed our mobile app, reaching 2 million active users worldwide.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <h4>2025<br/>Present<br/>Day</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>2025</h4>
+                            <h4 class="subheading">Industry Leader</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Today, ShopEase serves over 10 million customers in 25+ countries with 2,000+ employees and 15 fulfillment centers.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image bg-primary">
+                        <h4>Be Part<br/>Of Our<br/>Story!</h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet Our Leadership Team</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img class="mx-auto" src="https://via.placeholder.com/200" alt="CEO">
+                        <h4 class="mt-3">John Smith</h4>
+                        <p class="text-muted">CEO & Founder</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img class="mx-auto" src="https://via.placeholder.com/200" alt="COO">
+                        <h4 class="mt-3">Sarah Johnson</h4>
+                        <p class="text-muted">Chief Operations Officer</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img class="mx-auto" src="https://via.placeholder.com/200" alt="CTO">
+                        <h4 class="mt-3">Michael Chen</h4>
+                        <p class="text-muted">Chief Technology Officer</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img class="mx-auto" src="https://via.placeholder.com/200" alt="CMO">
+                        <h4 class="mt-3">Emily Rodriguez</h4>
+                        <p class="text-muted">Chief Marketing Officer</p>
+                        <div class="social-icons">
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-outline-dark btn-social mx-1"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="large">Our team of 2,000+ dedicated professionals work around the clock to provide the best shopping experience for our customers worldwide.</p>
+                <a href="contact.html" class="btn btn-primary mt-3">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">ShopEase by the Numbers</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="card border-0 shadow-sm py-4">
+                        <div class="card-body">
+                            <h2 class="fw-bold text-primary">10M+</h2>
+                            <p class="text-muted mb-0">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="card border-0 shadow-sm py-4">
+                        <div class="card-body">
+                            <h2 class="fw-bold text-primary">25+</h2>
+                            <p class="text-muted mb-0">Countries Served</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="card border-0 shadow-sm py-4">
+                        <div class="card-body">
+                            <h2 class="fw-bold text-primary">100K+</h2>
+                            <p class="text-muted mb-0">Products Available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm py-4">
+                        <div class="card-body">
+                            <h2 class="fw-bold text-primary">2000+</h2>
+                            <p class="text-muted mb-0">Team Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2>Ready to Experience ShopEase?</h2>
+            <p class="lead mb-4">Join millions of satisfied customers who trust us for their shopping needs.</p>
+            <a href="products.html" class="btn btn-light btn-lg me-2">Start Shopping</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">ShopEase</h5>
+                    <p>Your one-stop destination for all your shopping needs with the best deals and high-quality products.</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white">About Us</a></li>
+                        <li class="mb-2"><a href="products.html" class="text-white">Products</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-white">Gallery</a></li>
+                        <li class="mb-2"><a href="partners.html" class="text-white">Partners</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Shipping & Delivery</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Returns & Refunds</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-4">Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Shopping Street, NY 10001</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@shopease.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">© 2025 ShopEase. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="https://via.placeholder.com/50x30" alt="Visa" class="ms-2">
+                    <img src="https://via.placeholder.com/50x30" alt="Mastercard" class="ms-2">
+                    <img src="https://via.placeholder.com/50x30" alt="PayPal" class="ms-2">
+                    <img src="https://via.placeholder.com/50x30" alt="AmEx" class="ms-2">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">Forgot Password?</a>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p>Or login with:</p>
+                        <button class="btn btn-outline-primary me-2"><i class="fab fa-google"></i> Google</button>
+                        <button class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
